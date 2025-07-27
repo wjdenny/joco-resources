@@ -1,0 +1,19 @@
+<article data-key="{{ key }}">
+    <header>
+        <hgroup>
+            <h5>{{ resource.title }}</h5>
+            <p><a href="/?search={{ resource.organization | urlencode }}">{{ resource.organization }}</a></p>
+            {% include 'resource/tags.njk' %}
+        </hgroup>
+    </header>
+    <main>
+        <p>{{ resource.note | nl2br | safe }}</p>
+        {% include 'resource/phone.njk' %}
+        {% include 'resource/email.njk' %}
+        {% include 'resource/location.njk' %}
+    </main>
+    <footer>
+        <span class="modifiedTime"><small>Last modified {{ resource.lastModifiedDate | humanRelativeTime }}</small></span>
+        <span class="gitHubLink"><a href="{{ resource.gitHubLink }}" target="_blank"><small>Edit</small></a></span>
+    </footer>
+</article>

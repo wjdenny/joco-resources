@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="css/pico.sand.min.css">
+    <link rel="stylesheet" href="css/site.css">
+    <title>Johnson County Resources</title>
+  </head>
+  <body>
+    <header class="container">
+        {% include 'nav.njk' %}
+    </header>
+    <main class="container">
+      {% include 'search.njk' %}
+      <hr />
+      <div id="resources">
+        {% for key, resource in resources %}
+          {% include 'resource.njk' %}
+        {% endfor %}
+      </div>
+    </main>
+    <footer class="container">
+    </footer>
+    <pre>{{ test | dump }}</pre>
+  </body>
+</html>

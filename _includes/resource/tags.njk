@@ -1,0 +1,5 @@
+<p>
+    {% for tag in resource.tags %}
+        <a href="/?search=#{{ tag | urlencode }}"><small>#{{ tag }}</small></a>
+    {% endfor %}
+</p>
