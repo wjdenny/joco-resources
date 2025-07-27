@@ -2,8 +2,6 @@ import yaml from "js-yaml";
 import human from "human-time";
 
 export default function(eleventyConfig) {
-    eleventyConfig.addGlobalData("github", "https://github.com/wjdenny/resources-johnson-county");
-
     // Pass through all css files.
     eleventyConfig.addPassthroughCopy("css/*.css");
 

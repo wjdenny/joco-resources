@@ -21,7 +21,7 @@ export default {
             resources[key].dataFile = `${dataPath}/${key}.yaml`;
 
             // compute link to GitHub edit page
-            resources[key].gitHubLink = `${data.github}/blob/master/_data/${key}.yaml`
+            resources[key].gitHubLink = `https://github.com/wjdenny/joco-resources/blob/main/_data/resources/${key}.yaml`
 
             // compute last modified date
             resources[key].lastModifiedDate = fs.statSync(resources[key].dataFile).mtime
