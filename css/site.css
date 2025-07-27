@@ -19,8 +19,8 @@ article {
 
 article footer {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-between
+    grid-template-columns: 1fr;
+    justify-items: end
 }
 
 .gitHubLink {
