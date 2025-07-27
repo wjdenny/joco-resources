@@ -1,0 +1,10 @@
+---
+title: Search
+layout: layout.njk
+---
+
+<div id="resources">
+    {% for key, resource in resources %}
+    {% include 'resource.njk' %}
+    {% endfor %}
+</div>
