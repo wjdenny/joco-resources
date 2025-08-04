@@ -10,13 +10,6 @@ a[role=edit] {
     grid-gap: 1rem;
 }
 
-article {
-    display: grid;
-    grid-template-rows: 6rem auto 3rem;
-    grid-gap: 0;
-    grid-auto-flow: row;
-}
-
 article footer {
     display: grid;
     grid-template-columns: 1fr;
@@ -27,10 +20,18 @@ article footer {
     text-align: right;
 }
 
-.search-match {
-    border: 2px yellow;
+.resource-card {
+    display: grid;
+    grid-template-rows: 6rem auto 3rem;
+    grid-gap: 0;
+    grid-auto-flow: row;
+    display: none;
+    opacity: 0;
 }
 
-article:not(.search-match) {
-    display: none;
+.search-match {
+    border: 2px yellow;
+    display: revert;
+    opacity: 1;
+    transition: opacity 2s linear
 }
