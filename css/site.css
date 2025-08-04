@@ -26,3 +26,11 @@ article footer {
 .gitHubLink {
     text-align: right;
 }
+
+.search-match {
+    border: 2px yellow;
+}
+
+article:not(.search-match) {
+    display: none;
+}

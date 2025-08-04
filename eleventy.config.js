@@ -1,13 +1,31 @@
 import yaml from "js-yaml";
 import human from "human-time";
+import { minify } from "terser";;
 import CleanCSS from "clean-css";
 
 export default function(eleventyConfig) {
+    // Pass through all css files.
+    eleventyConfig.addPassthroughCopy("css/*.css");
+
+	// Pass through all js files.
+    eleventyConfig.addPassthroughCopy("js/*.js");
+
+	// Pass through all vendor files.
+	eleventyConfig.addPassthroughCopy("vendor/*");
+
+	// add a join filter
+	eleventyConfig.addFilter("join", function (arr) { return arr?.join(` `) });
+
     // Use YAML to process data files
     eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
 
 	eleventyConfig.addFilter("humanRelativeTime", function (dateVal) {
 		return human(new Date(dateVal));
+	});
+
+	eleventyConfig.addFilter("jsmin", async function (code) {
+		const minified = await minify(code);
+		return minified.code ?? code
 	});
 
 	eleventyConfig.addFilter("cssmin", function (code) {

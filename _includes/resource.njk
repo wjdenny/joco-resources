@@ -1,4 +1,8 @@
-<article data-key="{{ key }}">
+<article 
+    data-key="{{ key }}" class="resource-card"
+    data-title="{{ resource.title }}"
+    data-note="{{ resource.note }}"
+    data-tags="{{ resource.tags | join }}">
     <header>
         <hgroup>
             <h5>{{ resource.title }}</h5>
