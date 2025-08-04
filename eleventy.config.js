@@ -4,6 +4,9 @@ import { minify } from "terser";;
 import CleanCSS from "clean-css";
 
 export default function(eleventyConfig) {
+	eleventyConfig.addWatchTarget("./css")
+	eleventyConfig.addWatchTarget("./js")
+	
 	// add a join filter
 	eleventyConfig.addFilter("join", function (arr) { return arr?.join(` `) });
 
