@@ -3,12 +3,14 @@ const searchForm = document.querySelector("form[role='search']")
 const resources = document.querySelectorAll("#resources article")
 const data = [ ...resources ].map(e => ({
     key: e.dataset.key,
-    title: e.querySelector("h5").dataset.resourceTitle
+    title: e.querySelector("h5").dataset.resourceTitle,
+    note: e.querySelector("[data-resource-note]").dataset.resourceNote
 }))
 
 const idx = lunr(function () {
     this.ref('key');
     this.field('title')
+    this.field('note')
 
     data.forEach(function (resource) { this.add(resource) }, this)
 })
@@ -27,6 +29,6 @@ searchForm.addEventListener("submit", e => {
 
     input.focus();
     input.select();
-    
+
     e.preventDefault();
 })

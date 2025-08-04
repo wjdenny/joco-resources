@@ -7,7 +7,7 @@
         </hgroup>
     </header>
     <main>
-        <p>{{ resource.note | nl2br | safe }}</p>
+        <p data-resource-note="{{ resource.note }}">{{ resource.note | nl2br | safe }}</p>
         {% include 'resource/phone.njk' %}
         {% include 'resource/email.njk' %}
         {% include 'resource/location.njk' %}
