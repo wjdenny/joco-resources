@@ -4,15 +4,6 @@ import { minify } from "terser";;
 import CleanCSS from "clean-css";
 
 export default function(eleventyConfig) {
-    // Pass through all css files.
-    eleventyConfig.addPassthroughCopy("css/*.css");
-
-	// Pass through all js files.
-    eleventyConfig.addPassthroughCopy("js/*.js");
-
-	// Pass through all vendor files.
-	eleventyConfig.addPassthroughCopy("vendor/*");
-
 	// add a join filter
 	eleventyConfig.addFilter("join", function (arr) { return arr?.join(` `) });
 
