@@ -1,7 +1,7 @@
-<article data-key="{{ key }}">
+<article data-key="{{ key }}" class="resource-card">
     <header>
         <hgroup>
-            <h5>{{ resource.title }}</h5>
+            <h5 data-resource-title="{{ resource.title }}">{{ resource.title }}</h5>
             <p><a href="/?search={{ resource.organization | urlencode }}">{{ resource.organization }}</a></p>
             {% include 'resource/tags.njk' %}
         </hgroup>

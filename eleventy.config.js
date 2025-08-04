@@ -5,6 +5,12 @@ export default function(eleventyConfig) {
     // Pass through all css files.
     eleventyConfig.addPassthroughCopy("css/*.css");
 
+	// Pass through all js files.
+    eleventyConfig.addPassthroughCopy("js/*.js");
+
+	// Pass through all vendor files.
+	eleventyConfig.addPassthroughCopy("vendor/*");
+
     // Use YAML to process data files
     eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
 

@@ -6,6 +6,7 @@
     <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="{{ '/css/pico.sand.min.css' | url }}">
     <link rel="stylesheet" href="{{ '/css/site.css' | url}}">
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
     <title>Johnson County Resources</title>
   </head>
   <body>
@@ -20,4 +21,6 @@
     <footer class="container">
     </footer>
   </body>
+  {% set js %} {% include "js/search.js" %} {% endset %}
+  <script>{{ js | safe }}</script>
 </html>
