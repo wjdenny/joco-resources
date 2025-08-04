@@ -1,13 +1,17 @@
-<article data-key="{{ key }}" class="resource-card">
+<article 
+    data-key="{{ key }}" class="resource-card"
+    data-title="{{ resource.title }}"
+    data-note="{{ resource.note }}"
+    data-tags="{{ resource.tags | join }}">
     <header>
         <hgroup>
-            <h5 data-resource-title="{{ resource.title }}">{{ resource.title }}</h5>
+            <h5>{{ resource.title }}</h5>
             <p><a href="/?search={{ resource.organization | urlencode }}">{{ resource.organization }}</a></p>
             {% include 'resource/tags.njk' %}
         </hgroup>
     </header>
     <main>
-        <p data-resource-note="{{ resource.note }}">{{ resource.note | nl2br | safe }}</p>
+        <p>{{ resource.note | nl2br | safe }}</p>
         {% include 'resource/phone.njk' %}
         {% include 'resource/email.njk' %}
         {% include 'resource/location.njk' %}
