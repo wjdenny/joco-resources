@@ -11,6 +11,9 @@ export default function(eleventyConfig) {
 	// Pass through all vendor files.
 	eleventyConfig.addPassthroughCopy("vendor/*");
 
+	// add a join filter
+	eleventyConfig.addFilter("join", function (arr) { return arr?.join(` `) });
+
     // Use YAML to process data files
     eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
 
