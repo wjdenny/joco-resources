@@ -19,16 +19,16 @@
         <li><strong><a href="/">Johnson County Resources</a></strong></li>
     </ul>
     <ul>
-        <li><a href="help" class="contrast">Help</a></li>
-        <li><a href="about" class="contrast">About</a></li>
-        <li><a href="#" class="contrast">Map</a></li>
-        <li><a href="search" class="contrast">Directory</a></li>
-        <li><a href="#" class="contrast">Volunteer</a></li>
+        <li><a href="/help" class="contrast">Help</a></li>
+        <li><a href="/about" class="contrast">About</a></li>
+        
+        
+        
     </ul>
 </nav>
     </header>
     <main class="container">
-      <form role="search">
+      <form role="search" action="/" method="get">
     <input type="search" name="search" placeholder="Search using #tags or any keyword" aria-label="search" autofocus />
     <input type="submit" value="Search" />
 </form>
@@ -50,5 +50,5 @@
     </footer>
   </body>
   
-  <script>document.addEventListener("DOMContentLoaded",function(){const e=new URLSearchParams(window.location.search).get("search"),t=[...document.querySelectorAll("#resource-cards .resource-card")],s=t.map(e=>e.dataset),r=lunr(function(){this.ref("key"),this.field("title"),this.field("note"),this.field("tags"),this.k1(1.2),this.b(0),s.forEach(function(e){this.add(e)},this)});if(e){const s=r.search(e).map(({ref:e,score:s})=>{const r=t.find(t=>t.dataset.key===e);return r.dataset.score=s,r}).sort(e=>-e.dataset.score),c=document.querySelector("#results");s.forEach(e=>c.appendChild(e));const o=document.querySelector("form[role='search'] input[type='search']");o.value=e,o.focus(),o.select()}else t.forEach(e=>e.classList.remove("search-hidden"))});</script>
+  <script>document.addEventListener("DOMContentLoaded",function(){const e=new URLSearchParams(window.location.search).get("search"),t=[...document.querySelectorAll("#resource-cards .resource-card")],s=t.map(e=>e.dataset),r=lunr(function(){this.ref("key"),this.field("title"),this.field("note"),this.field("tags"),this.k1(1.2),this.b(0),s.forEach(function(e){this.add(e)},this)});if(e){const s=r.search(e).map(({ref:e,score:s})=>{const r=t.find(t=>t.dataset.key===e);return r.dataset.score=s,r}).sort(e=>-e.dataset.score),c=document.querySelector("#results");s.forEach(e=>c.appendChild(e));const o=document.querySelector("form[role='search'] input[type='search']");o.value=e,o.focus(),o.select()}else window.location.href="/?search=*"});</script>
 </html>

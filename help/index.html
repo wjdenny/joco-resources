@@ -19,16 +19,16 @@
         <li><strong><a href="/">Johnson County Resources</a></strong></li>
     </ul>
     <ul>
-        <li><a href="help" class="contrast">Help</a></li>
-        <li><a href="about" class="contrast">About</a></li>
-        <li><a href="#" class="contrast">Map</a></li>
-        <li><a href="search" class="contrast">Directory</a></li>
-        <li><a href="#" class="contrast">Volunteer</a></li>
+        <li><a href="/help" class="contrast">Help</a></li>
+        <li><a href="/about" class="contrast">About</a></li>
+        
+        
+        
     </ul>
 </nav>
     </header>
     <main class="container">
-      <form role="search">
+      <form role="search" action="/" method="get">
     <input type="search" name="search" placeholder="Search using #tags or any keyword" aria-label="search" autofocus />
     <input type="submit" value="Search" />
 </form>
@@ -36,23 +36,23 @@
         <p>Use the search bar below to find local support services. You can enter keywords (like &quot;food&quot; or &quot;legal aid&quot;) or use tags to filter results more precisely.</p>
 <p>Here are some search tips to get you started.</p>
 <h3>General keywords</h3>
-<p>Try terms like <code>rent help</code>, <code>counseling</code>, or <code>job training</code>.</p>
+<p>Try terms like <a href="/?search=rent%20help"><code>rent help</code></a>, <a href="/?search=counseling"><code>counseling</code></a>, or <a href="/?search=training"><code>training</code></a>.</p>
 <h3>Tag-based search</h3>
 <p>Use tags to filter by topic, eligibility, or provider. Examples:</p>
 <ul>
-<li><code>tag:#housing</code> – Resources related to housing</li>
-<li><code>tag:#women</code> – Services for women</li>
-<li><code>tag:#uiowa</code> – For University of Iowa students</li>
+<li><a href="/?search=tags:housing"><code>tags:housing</code></a> – Resources related to housing</li>
+<li><a href="/?search=tags:women"><code>tags:women</code></a> – Services for women</li>
+<li><a href="/?search=tags:uiowa"><code>tags:uiowa</code></a> – For University of Iowa students</li>
 </ul>
 <h4>Organization tags</h4>
 <p>You can also filter by who offers the service.</p>
 <ul>
-<li><code>tag:#gov/dhs</code> – Iowa Department of Human Services</li>
-<li><code>tag:#gov/icgov</code> – Services from Iowa City municipal government</li>
-<li><code>tag:#ngo/ncjc</code> – Nonprofit organizations (e.g., Neighborhood Centers of Johnson County)</li>
-<li><code>tag:#aid/itmaf</code> – Mutual aid groups (e.g., Iowa Trans Mutual Aid Fund)</li>
+<li><a href="/?search=tags:gov/dhs"><code>tags:gov/dhs</code></a> – Iowa Department of Human Services</li>
+<li><a href="/?search=tags:gov/icgov"><code>tags:gov/icgov</code></a> – Services from Iowa City municipal government</li>
+<li><a href="/?search=tags:ngo/ncjc"><code>tags:ngo/ncjc</code></a> – Nonprofit organizations (e.g., Neighborhood Centers of Johnson County)</li>
+<li><a href="/?search=tags:aid/itmaf"><code>tags:aid/itmaf</code></a> – Mutual aid groups (e.g., Iowa Trans Mutual Aid Fund)</li>
 </ul>
-<p>You can combine tags and keywords as needed, for example: <code>housing tag:#women tag:#gov/iowacity</code>.</p>
+<p>You can combine tags and keywords as needed, for example: [<code>housing tags:women tags:gov/iowacity</code>](/?search=housing tags:women tags:gov/iowacity).</p>
 <p>All results are community-maintained and may evolve over time. If you notice anything out of date or mis-tagged, you can <a href="https://github.com/wjdenny/joco-resources">submit an update or contribute on GitHub</a>.</p>
 
     </main>
@@ -60,5 +60,5 @@
     </footer>
   </body>
   
-  <script>document.addEventListener("DOMContentLoaded",function(){const e=new URLSearchParams(window.location.search).get("search"),t=[...document.querySelectorAll("#resource-cards .resource-card")],s=t.map(e=>e.dataset),r=lunr(function(){this.ref("key"),this.field("title"),this.field("note"),this.field("tags"),this.k1(1.2),this.b(0),s.forEach(function(e){this.add(e)},this)});if(e){const s=r.search(e).map(({ref:e,score:s})=>{const r=t.find(t=>t.dataset.key===e);return r.dataset.score=s,r}).sort(e=>-e.dataset.score),c=document.querySelector("#results");s.forEach(e=>c.appendChild(e));const o=document.querySelector("form[role='search'] input[type='search']");o.value=e,o.focus(),o.select()}else t.forEach(e=>e.classList.remove("search-hidden"))});</script>
+  <script>document.addEventListener("DOMContentLoaded",function(){const e=new URLSearchParams(window.location.search).get("search"),t=[...document.querySelectorAll("#resource-cards .resource-card")],s=t.map(e=>e.dataset),r=lunr(function(){this.ref("key"),this.field("title"),this.field("note"),this.field("tags"),this.k1(1.2),this.b(0),s.forEach(function(e){this.add(e)},this)});if(e){const s=r.search(e).map(({ref:e,score:s})=>{const r=t.find(t=>t.dataset.key===e);return r.dataset.score=s,r}).sort(e=>-e.dataset.score),c=document.querySelector("#results");s.forEach(e=>c.appendChild(e));const o=document.querySelector("form[role='search'] input[type='search']");o.value=e,o.focus(),o.select()}else window.location.href="/?search=*"});</script>
 </html>
