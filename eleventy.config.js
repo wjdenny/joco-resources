@@ -1,15 +1,17 @@
 import yaml from "js-yaml";
 import human from "human-time";
+import CleanCSS from "clean-css";
 
 export default function(eleventyConfig) {
-    // Pass through all css files.
-    eleventyConfig.addPassthroughCopy("css/*.css");
-
     // Use YAML to process data files
     eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
 
 	eleventyConfig.addFilter("humanRelativeTime", function (dateVal) {
 		return human(new Date(dateVal));
+	});
+
+	eleventyConfig.addFilter("cssmin", function (code) {
+		return new CleanCSS({}).minify(code).styles;
 	});
 
     // Set dev server options
