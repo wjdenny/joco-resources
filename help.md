@@ -1,5 +1,5 @@
 ---
-title: Johnson County Resources
+title: Using Johnson County Resources
 layout: layout.njk
 ---
 
