@@ -1,0 +1,36 @@
+a { text-decoration: none }
+
+a[role=edit] {
+    float: right
+}
+
+#resources {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    grid-gap: 1rem;
+}
+
+article {
+    display: grid;
+    grid-template-rows: 6rem auto 3rem;
+    grid-gap: 0;
+    grid-auto-flow: row;
+}
+
+article footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: end
+}
+
+.gitHubLink {
+    text-align: right;
+}
+
+.search-match {
+    border: 2px yellow;
+}
+
+article:not(.search-match) {
+    display: none;
+}
