@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // If there are no search terms, display everything.
     else {
-        cards.forEach(e => e.classList.remove("search-hidden"))
+        window.location.href = "/?search=*"
     }
 
 });
