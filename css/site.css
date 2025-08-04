@@ -4,7 +4,7 @@ a[role=edit] {
     float: right
 }
 
-#resources {
+#results {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
     grid-gap: 1rem;
@@ -20,18 +20,13 @@ article footer {
     text-align: right;
 }
 
+#resource-cards { 
+    display: none;
+}
+
 .resource-card {
     display: grid;
     grid-template-rows: 6rem auto 3rem;
     grid-gap: 0;
     grid-auto-flow: row;
-    display: none;
-    opacity: 0;
-}
-
-.search-match {
-    border: 2px yellow;
-    display: revert;
-    opacity: 1;
-    transition: opacity 2s linear
 }
