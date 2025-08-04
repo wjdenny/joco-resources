@@ -1,5 +1,6 @@
 import yaml from "js-yaml";
 import human from "human-time";
+import { minify } from "terser";;
 
 export default function(eleventyConfig) {
     // Pass through all css files.
@@ -19,6 +20,11 @@ export default function(eleventyConfig) {
 
 	eleventyConfig.addFilter("humanRelativeTime", function (dateVal) {
 		return human(new Date(dateVal));
+	});
+
+	eleventyConfig.addFilter("jsmin", async function (code) {
+		const minified = await minify(code);
+		return minified.code ?? code
 	});
 
     // Set dev server options

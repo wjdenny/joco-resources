@@ -22,5 +22,5 @@
     </footer>
   </body>
   {% set js %} {% include "js/search.js" %} {% endset %}
-  <script>{{ js | safe }}</script>
+  <script>{{ js | jsmin | safe }}</script>
 </html>
