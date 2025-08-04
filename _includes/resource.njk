@@ -7,7 +7,11 @@
         <hgroup>
             <h5>{{ resource.title }}</h5>
             <p><a href="/?search={{ resource.organization | urlencode }}">{{ resource.organization }}</a></p>
-            {% include 'resource/tags.njk' %}
+            <p>
+                {% for tag in resource.tags %}
+                    <a href="/?search=tags:{{ tag | urlencode }}"><small>#{{ tag }}</small></a>
+                {% endfor %}
+            </p>
         </hgroup>
     </header>
     <main>
