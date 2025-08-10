@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // If there are no search terms, display everything.
     else {
-        window.location.href = "/?search=*"
+        window.location.href = "/joco-resources?search=*"
     }
 
 });
